@@ -1,7 +1,8 @@
 const mongoose=require("mongoose")
+require ("dotenv").config()
 
 const dbConnect=async()=>{
-    await mongoose.connect("mongodb://localhost:27017/exam")
+    await mongoose.connect(process.env.DB_URL)
     console.log("connect to database")
 }
 module.exports=dbConnect
