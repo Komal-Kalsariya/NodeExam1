@@ -1,10 +1,18 @@
 
-const postData=async()=>{
-    let res=await fetch("http://localhost:8090/user")
-    let data=await res.json()
-    console.log(data);
-    
- }
+ const postdata = (data) => {
+    fetch("http://localhost:8090/user", {
+        method: "POST",
+        headers: { "Content-Type": "Application/json" },
+        body: JSON.stringify(data)
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+        })
+
+}
+
+
 
 const handledata=(e)=>{
     e.preventDefault()
@@ -14,7 +22,7 @@ const handledata=(e)=>{
         email:document.getElementById("email").value,
         password:document.getElementById("password").value
     }
-    postData(data)
+    postdata(data)
   
 
 }
