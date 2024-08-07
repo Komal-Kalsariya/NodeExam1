@@ -1,6 +1,6 @@
 
  const postdata = (data) => {
-    fetch("http://localhost:8090/user", {
+    fetch("http://localhost:8090/user/signup", {
         method: "POST",
         headers: { "Content-Type": "Application/json" },
         body: JSON.stringify(data)
